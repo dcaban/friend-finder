@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reservation Page</title>
+
+    <!-- Latest compiled and minified CSS & JS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+<div class="container">
+
+    <div class="jumbotron">
+        <h1 class="text-center"><span class="glyphicon glyphicon-fire"></span> Friend Finder</h1>
+        <hr>
+        <h2 class="text-center">Survey Questions</h2>
+        <br>
+
+
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+
+            <!-- Reservation Page -->
+            <div class="panel panel-default">
+                <div class="panel-heading text-center">
+                    <h4>Name (Required)</h4>
+                    <input type="text" name="" id="name" class="form-control" required="">
+                    <h4>Link to Photo Image (Required)</h4>
+                    <input type="text" name="" id="photo" class="form-control" required="">
+                    <hr>
+
+                    <h3>Enter how much you agree with the statement.</h3>
+
+                        <p>Select one for strongly disagree and five for strongly agree</p>
+                </div>
+                <div class="panel-body text-center">
+                <div>
+                    <h4>You enjoy meeting new people</h4>
+                        <select class="custom-select" id="q1">
+                            <option selected>Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                            <option value="4">Four</option>
+                            <option value="5">Five</option>
+                        </select>
+                    <h4>You enjoy helping people</h4>
+                        <select class="custom-select" id="q2">
+                            <option selected>Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                            <option value="4">Four</option>
+                            <option value="5">Five</option>
+                        </select>
+                    <h4>You are easily disappointed</h4>
+                        <select class="custom-select" id="q3">
+                            <option selected>Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                            <option value="4">Four</option>
+                            <option value="5">Five</option>
+                        </select>
+                    <h4>You enjoy crowds</h4>
+                        <select class="custom-select" id="q4">
+                            <option selected>Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                            <option value="4">Four</option>
+                            <option value="5">Five</option>
+                        </select>
+                    <h4>You enjoy the outdoors</h4>
+                        <select class="custom-select" id="q5">
+                            <option selected>Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                            <option value="4">Four</option>
+                            <option value="5">Five</option>
+                        </select>
+                    <h4>You are prepared to tell people if they are mistaken</h4>
+                        <select class="custom-select" id="q6">
+                            <option selected>Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                            <option value="4">Four</option>
+                            <option value="5">Five</option>
+                        </select>
+                    <h4>You get along with people of the opposite political party</h4>
+                        <select class="custom-select" id="q7">
+                            <option selected>Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                            <option value="4">Four</option>
+                            <option value="5">Five</option>
+                        </select>
+                    <h4>You consider yourself religious</h4>
+                        <select class="custom-select" id="q8">
+                            <option selected>Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                            <option value="4">Four</option>
+                            <option value="5">Five</option>
+                        </select>
+                    <h4>You like trying new foods from different cultures</h4>
+                        <select class="custom-select" id="q9">
+                            <option selected>Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                            <option value="4">Four</option>
+                            <option value="5">Five</option>
+                        </select>
+                    <h4>You like learning things about diffrent cultures</h4>
+                        <select class="custom-select" id="q10">
+                            <option selected>Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                            <option value="4">Four</option>
+                            <option value="5">Five</option>
+                        </select>
+                    <br>
+                    <br>
+                    </div>
+
+
+                        <button type="submit" class="btn btn-primary submit">Submit</button>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <footer class="footer">
+        <div class="container">
+            <p><a href="/api/friends">API Friends Link</a> |  <a href="https://github.com/afhaque/HotRestaurant">GitHub Repo</a></p>
+        </div>
+    </footer>
+
+</div>
+
+</body>
+</html>
+
+
+<!--HOW FORM DATA IS SENT TO OUR SERVER -->
+
+
+<script type="text/javascript">
+
+
+    //only thing that this will do on this page is post to server
+
+
+    $(".submit").on("click", function(event) {
+        event.preventDefault();
+
+
+        var newFriend = {
+            name: $("#name").val().trim(),
+            photo: $("#photo").val().trim(),
+            scores: [
+                $("#q1").val().trim(),
+                $("#q2").val().trim(),
+                $("#q3").val().trim(),
+                $("#q4").val().trim(),
+                $("#q5").val().trim(),
+                $("#q6").val().trim(),
+                $("#q7").val().trim(),
+                $("#q8").val().trim(),
+                $("#q9").val().trim(),
+                $("#q10").val().trim()
+            ]
+
+
+        };
+
+        console.log(newFriend);
+        runFriendFinder()
+
+        $.post("/api/friends", newFriend);
+
+        function runFriendFinder() {
+        console.log("im running")
+            // Here we get the location of the root page.
+
+            var currentURL = window.location.origin;
+
+            // The AJAX function uses the URL of our API to GET the data associated with it (initially set to localhost)
+            $.ajax({ url: currentURL + "/api/friends", method: "GET" })
+                .done(function(friendData) {
+
+                    // Here we are logging the URL so we have access to it for troubleshooting
+                    console.log("------------------------------------");
+                    console.log("URL: " + currentURL + "/api/tables");
+                    console.log("------------------------------------");
+
+                    // Here we then log the NYTData to console, where it will show up as an object.
+                    console.log(friendData);
+                    console.log("------------------------------------");
+
+
+                    //*********Compare the user information to with what the is stored in the server on an object
+
+
+                    for (var i = 0; i < (friendData.length - 1); i++) {
+
+                        console.log(friendData[i].scores);
+
+                      //loop through friends array
+
+
+              //create popup to show most compatible matches
+//
+//
+//
+// $("#tableSection").append(tableSection);
+                    }
+                });
+        }
+
+    });
+
+</script>
