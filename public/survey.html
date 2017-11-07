@@ -190,49 +190,49 @@
 
         };
 
-        console.log(newFriend);
-        runFriendFinder()
+
+
 
         $.post("/api/friends", newFriend);
 
-        function runFriendFinder() {
-        console.log("im running")
-            // Here we get the location of the root page.
-
-            var currentURL = window.location.origin;
-
-            // The AJAX function uses the URL of our API to GET the data associated with it (initially set to localhost)
-            $.ajax({ url: currentURL + "/api/friends", method: "GET" })
-                .done(function(friendData) {
-
-                    // Here we are logging the URL so we have access to it for troubleshooting
-                    console.log("------------------------------------");
-                    console.log("URL: " + currentURL + "/api/tables");
-                    console.log("------------------------------------");
-
-                    // Here we then log the NYTData to console, where it will show up as an object.
-                    console.log(friendData);
-                    console.log("------------------------------------");
-
-
-                    //*********Compare the user information to with what the is stored in the server on an object
-
-
-                    for (var i = 0; i < (friendData.length - 1); i++) {
-
-                        console.log(friendData[i].scores);
-
-                      //loop through friends array
-
-
-              //create popup to show most compatible matches
+//        function runFriendFinder() {
+//        console.log("im running")
+//            // Here we get the location of the root page.
+//
+//            var currentURL = window.location.origin;
+//
+//            // The AJAX function uses the URL of our API to GET the data associated with it (initially set to localhost)
+//            $.ajax({ url: currentURL + "/api/friends", method: "GET" })
+//                .done(function(friendData) {
+//
+//                    // Here we are logging the URL so we have access to it for troubleshooting
+//                    console.log("------------------------------------");
+//                    console.log("URL: " + currentURL + "/api/tables");
+//                    console.log("------------------------------------");
+//
+//                    // Here we then log the NYTData to console, where it will show up as an object.
+//                    console.log(friendData);
+//                    console.log("------------------------------------");
 //
 //
+//                    //*********Compare the user information to with what the is stored in the server on an object
 //
-// $("#tableSection").append(tableSection);
-                    }
-                });
-        }
+//
+//                    for (var i = 0; i < (friendData.length - 1); i++) {
+//
+//                        console.log(friendData[i].scores);
+//
+//                      //loop through friends array
+//
+//
+//              //create popup to show most compatible matches
+////
+////
+////
+//// $("#tableSection").append(tableSection);
+//                    }
+//                });
+//        }
 
     });
 
