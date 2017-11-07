@@ -171,6 +171,9 @@
         event.preventDefault();
 
 
+
+
+
         var newFriend = {
             name: $("#name").val().trim(),
             photo: $("#photo").val().trim(),
@@ -185,13 +188,21 @@
                 $("#q8").val().trim(),
                 $("#q9").val().trim(),
                 $("#q10").val().trim()
-            ]
-
-
+            ],
+            totalScore: (parseInt($("#q1").val().trim())+
+                parseInt($("#q2").val().trim())+
+                parseInt($("#q3").val().trim())+
+                parseInt($("#q4").val().trim())+
+                parseInt($("#q5").val().trim())+
+                parseInt($("#q6").val().trim())+
+                parseInt($("#q7").val().trim())+
+                parseInt($("#q8").val().trim())+
+                parseInt($("#q9").val().trim())+
+                parseInt($("#q10").val().trim()))
         };
 
 
-
+        console.log(newFriend.totalScore);
 
         $.post("/api/friends", newFriend);
 

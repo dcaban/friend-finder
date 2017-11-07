@@ -8,19 +8,22 @@ module.exports = function (app) {
 
     app.post("/api/friends", function(req, res) {
 
-        var newFriend = {
-            name: "",
-            photo: "",
-            friendDifference: 1000
-        };
 
                console.log("im running");
                    var newFriend = req.body;
                    console.log(friendData);
                    var newName = newFriend.name;
-                   var newScore = req.body.q1;
+                   var newScore = friendData.scores;
+                   var totalScore = parseInt(newFriend.totalScore);
 
-                   console.log("work damnit " + newScore);
+
+        var newBff = {
+            name: "",
+            photo: "",
+            friendDifference: 100
+        };
+
+                   console.log("work damnit " + totalScore);
                    // for (var i = 0; i < 9; i++) {
                    //     var newScores = parseInt(newFriend[i].scores[i]);
                    //     console.log(newScores)
@@ -30,19 +33,27 @@ module.exports = function (app) {
            var difference = 0;
 
 
-                   // for (var i = 0; i < (friendData.length); i++) {
-                   //
-                   //     console.log(friendData[i].name);
-                   //
-                   //       for (var j=0; j< friendData[i].scores[j]; j++){
-                   //           console.log("testio"+ friendData[i].scores[j]);
-                   //           // console.log(friendsData[i].scores[x]);
-                   //
-                   // }
-                   // }
+                   for (var i = 0; i < (friendData.length); i++) {
+
+
+                         for (var j = 0; j < friendData[i].scores[j]; j++){
+
+                             difference += Math.abs(totalScore-
+                                 parseInt(friendData[i].scores[j]));
+
+                             newBff.name = friendData.name;
+                             newBff.photo = friendData.photo;
+                             newBff.friendDifference = difference;
+                             console.log("best match   " + JSON.stringify(newBff));
+
+                             console.log("testio"+ totalScore);
+
+
+                   }
+                   }
 
         friendData.push(req.body);
 
-        res.json(newFriend)
+        res.json(newBff)
     });
 };
